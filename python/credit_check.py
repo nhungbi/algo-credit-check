@@ -6,7 +6,7 @@ def credit_check(str_integers):
     
     #summed digits over 10:
     for i in range(len(account_identifier)):
-        digit = str(account_identifier[i])
+        digit = str(account_identifier[i]) #to check number of digits
         if len(digit) >=2:
             total = 0
             for num in digit:
