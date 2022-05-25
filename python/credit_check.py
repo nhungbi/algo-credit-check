@@ -1,8 +1,29 @@
-def credit_check(str):
-    pass
+def credit_check(str_integers):
+    account_identifier = [int(char) for char in str_integers]
+    #2x every other digits
+    for i in (range(0, len(account_identifier), 2)):
+        account_identifier[i]*=2 
+    
+    #summed digits over 10:
+    for i in range(len(account_identifier)):
+        digit = str(account_identifier[i])
+        if len(digit) >=2:
+            total = 0
+            for num in digit:
+                total += int(num)
+            account_identifier[i] = total
 
-# Your Luhn Algorithm Here
-# Expected Output:
-# If it is valid, print "The number is valid!"
-# If it is invalid, print "The number is invalid!"
+    results_sum = sum(account_identifier)
+    if results_sum % 10 == 0:
+        return 'The number is valid!'
+    
+    return 'The number is invalid!'
+
+        
+
+
+    # Your Luhn Algorithm Here
+    # Expected Output:
+    # If it is valid, print "The number is valid!"
+    # If it is invalid, print "The number is invalid!"
 
