@@ -1,7 +1,12 @@
 def credit_check(str_integers):
     account_identifier = [int(char) for char in str_integers]
-    #2x every other digits
-    for i in (range(0, len(account_identifier), 2)):
+    #2x every other digits, starting from right most
+    if len(account_identifier) % 2 == 0: #if even
+        start = 0
+    else:
+        start = 1
+
+    for i in (range(start, len(account_identifier), 2)):
         account_identifier[i]*=2 
     
     #summed digits over 10:
